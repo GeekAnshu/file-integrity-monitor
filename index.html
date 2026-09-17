@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>File Integrity Monitor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div class="logo">🛡️</div>
+        <h1>File Integrity Monitor</h1>
+        <p>Verify file integrity using SHA-256 cryptographic hashing</p>
+    </header>
+
+    <main>
+
+        <section class="upload-section">
+
+            <label for="fileInput" class="upload-box">
+
+                <div class="upload-icon">📁</div>
+
+                <h2>Select a File</h2>
+
+                <p>
+                    Choose any file from your computer
+                    to calculate its SHA-256 hash.
+                </p>
+
+                <span class="select-button">
+                    Choose File
+                </span>
+
+            </label>
+
+            <input
+                type="file"
+                id="fileInput"
+                hidden
+            >
+
+        </section>
+
+
+        <section id="fileSection" class="hidden">
+
+            <div class="file-info">
+
+                <div>
+                    <span class="label">Selected File</span>
+
+                    <h3 id="fileName">
+                        -
+                    </h3>
+
+                    <p id="fileSize">
+                        -
+                    </p>
+                </div>
+
+                <div class="file-icon">
+                    📄
+                </div>
+
+            </div>
+
+
+            <div class="hash-card">
+
+                <div class="hash-header">
+
+                    <div>
+                        <span class="label">
+                            SHA-256 HASH
+                        </span>
+
+                        <h3>
+                            Cryptographic Fingerprint
+                        </h3>
+                    </div>
+
+                    <button id="copyButton">
+                        Copy
+                    </button>
+
+                </div>
+
+                <div id="hashValue" class="hash">
+                    Calculating...
+                </div>
+
+            </div>
+
+
+            <div class="baseline-section">
+
+                <h3>Integrity Baseline</h3>
+
+                <p>
+                    Create a baseline hash for this file.
+                    Later, select the file again to check
+                    whether it has changed.
+                </p>
+
+                <div class="buttons">
+
+                    <button
+                        id="baselineButton"
+                        class="primary"
+                    >
+                        Set Baseline
+                    </button>
+
+                    <button
+                        id="compareButton"
+                        class="secondary"
+                    >
+                        Compare With Baseline
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="statusBox"
+                class="status hidden"
+            >
+
+                <div id="statusIcon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <h3 id="statusTitle">
+                        Integrity Verified
+                    </h3>
+
+                    <p id="statusMessage">
+                        The file has not changed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="information">
+
+            <h3>How SHA-256 Integrity Checking Works</h3>
+
+            <div class="steps">
+
+                <div class="step">
+                    <strong>01</strong>
+                    <span>Select a file</span>
+                </div>
+
+                <div class="step">
+                    <strong>02</strong>
+                    <span>Generate SHA-256 hash</span>
+                </div>
+
+                <div class="step">
+                    <strong>03</strong>
+                    <span>Save the baseline</span>
+                </div>
+
+                <div class="step">
+                    <strong>04</strong>
+                    <span>Compare future hashes</span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        Educational cybersecurity project • SHA-256 File Integrity Monitoring
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
